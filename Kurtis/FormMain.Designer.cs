@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmDeactive = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmExit = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbMinute = new System.Windows.Forms.ComboBox();
@@ -45,13 +50,9 @@
             this.cbInput = new System.Windows.Forms.CheckBox();
             this.groupBoxMouse = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.cmSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cmOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmDeactive = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabelInfo = new System.Windows.Forms.LinkLabel();
             this.contextMenuStrip.SuspendLayout();
             this.groupBox.SuspendLayout();
             this.groupBoxMouse.SuspendLayout();
@@ -75,7 +76,44 @@
             this.toolStripSeparator1,
             this.cmExit});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(181, 120);
+            this.contextMenuStrip.Size = new System.Drawing.Size(156, 98);
+            // 
+            // cmOpen
+            // 
+            this.cmOpen.Image = global::Kurtis.Properties.Resources.timer_cm;
+            this.cmOpen.Name = "cmOpen";
+            this.cmOpen.Size = new System.Drawing.Size(155, 22);
+            this.cmOpen.Text = "Aç";
+            this.cmOpen.Click += new System.EventHandler(this.cmOpen_Click);
+            // 
+            // cmDeactive
+            // 
+            this.cmDeactive.Image = global::Kurtis.Properties.Resources.stop;
+            this.cmDeactive.Name = "cmDeactive";
+            this.cmDeactive.Size = new System.Drawing.Size(155, 22);
+            this.cmDeactive.Text = "Devre Dışı Bırak";
+            this.cmDeactive.Click += new System.EventHandler(this.cmDeactive_Click);
+            // 
+            // cmSettings
+            // 
+            this.cmSettings.Image = global::Kurtis.Properties.Resources.settings;
+            this.cmSettings.Name = "cmSettings";
+            this.cmSettings.Size = new System.Drawing.Size(155, 22);
+            this.cmSettings.Text = "Ayarlar";
+            this.cmSettings.Click += new System.EventHandler(this.cmSettings_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
+            // 
+            // cmExit
+            // 
+            this.cmExit.Image = ((System.Drawing.Image)(resources.GetObject("cmExit.Image")));
+            this.cmExit.Name = "cmExit";
+            this.cmExit.Size = new System.Drawing.Size(155, 22);
+            this.cmExit.Text = "Çıkış";
+            this.cmExit.Click += new System.EventHandler(this.cmExit_Click);
             // 
             // groupBox
             // 
@@ -221,19 +259,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "dakika sonra kilitle";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // cmSettings
-            // 
-            this.cmSettings.Image = global::Kurtis.Properties.Resources.settings;
-            this.cmSettings.Name = "cmSettings";
-            this.cmSettings.Size = new System.Drawing.Size(180, 22);
-            this.cmSettings.Text = "Ayarlar";
-            this.cmSettings.Click += new System.EventHandler(this.cmSettings_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -252,29 +277,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // cmOpen
+            // linkLabelInfo
             // 
-            this.cmOpen.Image = global::Kurtis.Properties.Resources.timer_cm;
-            this.cmOpen.Name = "cmOpen";
-            this.cmOpen.Size = new System.Drawing.Size(180, 22);
-            this.cmOpen.Text = "Aç";
-            this.cmOpen.Click += new System.EventHandler(this.cmOpen_Click);
-            // 
-            // cmDeactive
-            // 
-            this.cmDeactive.Image = global::Kurtis.Properties.Resources.stop;
-            this.cmDeactive.Name = "cmDeactive";
-            this.cmDeactive.Size = new System.Drawing.Size(180, 22);
-            this.cmDeactive.Text = "Devre Dışı Bırak";
-            this.cmDeactive.Click += new System.EventHandler(this.cmDeactive_Click);
-            // 
-            // cmExit
-            // 
-            this.cmExit.Image = ((System.Drawing.Image)(resources.GetObject("cmExit.Image")));
-            this.cmExit.Name = "cmExit";
-            this.cmExit.Size = new System.Drawing.Size(180, 22);
-            this.cmExit.Text = "Çıkış";
-            this.cmExit.Click += new System.EventHandler(this.cmExit_Click);
+            this.linkLabelInfo.AutoSize = true;
+            this.linkLabelInfo.Location = new System.Drawing.Point(175, 190);
+            this.linkLabelInfo.Name = "linkLabelInfo";
+            this.linkLabelInfo.Size = new System.Drawing.Size(25, 13);
+            this.linkLabelInfo.TabIndex = 8;
+            this.linkLabelInfo.TabStop = true;
+            this.linkLabelInfo.Text = "Info";
+            this.linkLabelInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelInfo_LinkClicked);
             // 
             // FormMain
             // 
@@ -282,6 +294,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(411, 212);
+            this.Controls.Add(this.linkLabelInfo);
             this.Controls.Add(this.cbInput);
             this.Controls.Add(this.groupBoxMouse);
             this.Controls.Add(this.cbLockDisable);
@@ -336,5 +349,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem cmOpen;
         private System.Windows.Forms.ToolStripMenuItem cmSettings;
+        private System.Windows.Forms.LinkLabel linkLabelInfo;
     }
 }

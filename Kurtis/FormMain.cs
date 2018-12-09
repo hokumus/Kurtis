@@ -162,5 +162,10 @@ namespace Kurtis
             form.ShowDialog();
             WindowsLockHelper.Instance.SetTimes();
         }
+
+        private void linkLabelInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.hikmetokumus.com/Programs/kurtis");
+        }
     }
 }
