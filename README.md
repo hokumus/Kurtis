@@ -1,7 +1,5 @@
 # Kurtis
 
-[Kurtis v1.0 İndir](http://www.hikmetokumus.com/Application/Kurtis.zip)
-
 Kurtiş, belirtilen saatlere göre bilgisayarınızın otomatik olarak kilitlenmesi sağlayan bir uygulamadır. Uygulama ilk çalıştığında bildirim alanında simge olarak gözükmektedir ve otomatik olarak çalışmaya başlamaktadır. Uygulamaya ait genel özellikler aşağıdaki gibidir. 
 
 * Uygulama ilk defa çalıştığında otomatik olarak bildirim alanında simge olarak çalışmaya başlar.
